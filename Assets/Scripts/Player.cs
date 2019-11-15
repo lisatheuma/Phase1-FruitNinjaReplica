@@ -8,10 +8,16 @@ public class Player : MonoBehaviour
     //private int _lives = 1;
     //private TrailRenderer trail;
     //bool isSlice = false;
+    [SerializeField]
+    private GameObject slice;
     public float distance = 1f;
     public bool useInitialCameraDistance = false;
     private float actualDistance;
+    private float sliceDestroyTime;
     private Camera cam;
+    private Vector2 swipeStart;
+    EdgeCollider2D edgeCollider;
+
     void Start()
     {
         cam = Camera.main;
@@ -27,6 +33,7 @@ public class Player : MonoBehaviour
         {
             actualDistance = distance;
         }
+
     }
 
     void Update()
@@ -35,14 +42,6 @@ public class Player : MonoBehaviour
         mousePosition.z = actualDistance;
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
-
-    //public void Damage
-    //{  
-    //    if (_lives < 1)
-    //    {
-    //        _spawnManager.OnPlayerDeath();
-    //        Destroy(this.gameObject);
-    //}
 
 }
 

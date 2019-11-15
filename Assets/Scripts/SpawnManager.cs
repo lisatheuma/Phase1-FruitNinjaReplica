@@ -13,56 +13,40 @@ public class SpawnManager : MonoBehaviour
     private GameObject _sushiContainer;
 
     [SerializeField]
-    private GameObject _bombPrefab;            
-
-    [SerializeField]
-    private GameObject _bombContainer;   
-
-    [SerializeField]
     private GameObject[] _LuckyCatPrefab;
 
     [SerializeField]
     private Sprite[] objectSprites;
 
-    private Transform[] spawnPoints;
+    //private Transform[] spawnPoints;
     private bool _stopSpawning = false;
 
-    public float minDelay = 0.2f;
-    public float maxDelay = 1f;
-
-    
-    private Vector3 throwForce = new Vector3 (0, 18, 0);
+    public float spawnInterval, objectMinX, objectMaxX, objectY;
 
     void Start()
     {
-        InvokeRepeating("SpawnSushi", 0.5f, 6);
-        StartCoroutine(SpawnSushiRoutine());
-       // StartCoroutine(SpawnBombRoutine());
+        InvokeRepeating("spawnSushi", this.spawnInterval, this.spawnInterval);
+       // StartCoroutine(SpawnSushiRoutine());
        // StartCoroutine(SpawnLuckyCatRoutine());
     }
 
-    IEnumerator SpawnSushiRoutine()
+    //IEnumerator SpawnSushiRoutine()
+    private void spawnSushi()
     {
-      while (_stopSpawning == false)
-        {
-            int spawnIndex = Random.Range(0, spawnPoints.Length);
-            Transform spawnPoint = spawnPoints[spawnIndex];
-
-            GameObject spawnedSushi = Instantiate(_sushiPrefab, spawnPoint.position, Quaternion.identity);
+            GameObject Sushi = Instantiate(_sushiPrefab);
             
-            float delay = Random.Range(minDelay,maxDelay);
-            spawnedSushi.transform.SetParent(_sushiContainer.transform);
-            yield return new WaitForSeconds(delay);
-            //Destroy(spawnedSushi, 5f);
+            //Random.Range for varying spawning times? To allow multiple objects to enter the screen together
 
-            //Sprite objectSprite = objectSprites [Random.Range(0,this.objectSprites.Length)];
-            //newObject.GetComponent<SpriteRenderer>().sprite = objectSprite;
-        }
+            Sushi.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
+            //spawnedSushi.transform.SetParent(_sushiContainer.transform);
+            //yield return new WaitForSeconds(delay);
+            //Destroy(spawnedSushi, 5f);
+            Sprite objectSprite = objectSprites[Random.Range (0, this.objectSprites.Length)];
+            Sushi.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
-  
     
-   public void OnPlayerDeath()
-   {
-       _stopSpawning = true;
-   }
+    public void OnPlayerDeath()
+    {
+        _stopSpawning = true;
+    }
 }

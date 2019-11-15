@@ -44,7 +44,13 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <ItemGroup>     <Compile Include="Assets\Scripts\Player.cs" />
+  <ItemGroup>     <Compile Include="Assets\Scripts\Bomb.cs" />
+     <Compile Include="Assets\Scripts\BombSpawner.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\Slice.cs" />
+     <Compile Include="Assets\Scripts\SliceBomb.cs" />
+     <Compile Include="Assets\Scripts\SliceSushi.cs" />
      <Compile Include="Assets\Scripts\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\Sushi.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
