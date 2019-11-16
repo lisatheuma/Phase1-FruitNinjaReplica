@@ -6,23 +6,22 @@ public class Player : MonoBehaviour
 {
 
     //private int _lives = 1;
-    //private TrailRenderer trail;
-    //bool isSlice = false;
     [SerializeField]
-    private GameObject slice;
     public float distance = 1f;
     public bool useInitialCameraDistance = false;
+    public bool isslicing = false;
     private float actualDistance;
     private float sliceDestroyTime;
     private Camera cam;
     private Vector2 swipeStart;
-    EdgeCollider2D edgeCollider;
+    CircleCollider2D circleCollider;
 
     void Start()
     {
         cam = Camera.main;
        // trail = GetComponent<TrailRenderer>();
         Cursor.visible = false;
+        circleCollider = GetComponent<CircleCollider2D>();
         if(useInitialCameraDistance)
         {
             Vector3 toObjectVector = transform.position - Camera.main.transform.position;
@@ -42,6 +41,7 @@ public class Player : MonoBehaviour
         mousePosition.z = actualDistance;
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
     }
+    
 
 }
 

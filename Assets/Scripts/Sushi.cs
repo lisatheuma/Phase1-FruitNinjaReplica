@@ -11,9 +11,9 @@ public class Sushi : MonoBehaviour
     private float minXSpeed, maxXSpeed, minYSpeed, maxYSpeed;
     [SerializeField]
     private float destroyTime;
-
     private GameObject selectedObject;
     private Vector3 position;
+
 
 	void Start ()
 	{
@@ -25,7 +25,7 @@ public class Sushi : MonoBehaviour
     {
     }
 
-    void OnCollisionEnter2D(Collision2D col) 
+    void OnTriggerEnter2D(Collision2D col) 
     {
         if(col.gameObject.tag == "Player")
         {
@@ -33,4 +33,7 @@ public class Sushi : MonoBehaviour
             Score.scoreamount += 1;
         }    
     }
+
+    
+
 }
