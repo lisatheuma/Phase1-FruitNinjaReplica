@@ -22,12 +22,13 @@ public class Bomb : MonoBehaviour
     {
     }
 
-    //void OnTriggerEnter(Collider2D other) 
-    //{
-        //if (other.tag == "Player")
-        //{
-            //Destroy(gameObject);
-        //}
-    //}
+    void OnCollisionEnter2D(Collider2D other) 
+    {
+        if (other.tag == "Player")
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 
 }

@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
     private Vector2 swipeStart;
     CircleCollider2D circleCollider;
 
+    private float speed = 1.0f;
+    public static float unscaledTime;
+
+    
+
     void Start()
     {
         cam = Camera.main;
@@ -32,16 +37,26 @@ public class Player : MonoBehaviour
         {
             actualDistance = distance;
         }
-
+        
     }
 
     void Update()
     {
+        Cursor.visible = false;
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = actualDistance;
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
-    }
-    
 
+
+        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);
+
+
+        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        float angle = AngleBetweenTwoPoints(transform.position, mouseOnScreen);
+        transform.rotation =  Quaternion.Euler (new Vector3(0f,0f,angle));
+    }
+    float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
+         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
 }
 

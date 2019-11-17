@@ -47,14 +47,13 @@
   <ItemGroup>     <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\BombSpawner.cs" />
      <Compile Include="Assets\Scripts\BombTrail.cs" />
+     <Compile Include="Assets\Scripts\DisplayLives.cs" />
+     <Compile Include="Assets\Scripts\DisplayLives2.cs" />
      <Compile Include="Assets\Scripts\LuckyCat.cs" />
      <Compile Include="Assets\Scripts\LuckyCatSpawner.cs" />
-     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
-     <Compile Include="Assets\Scripts\Slice.cs" />
      <Compile Include="Assets\Scripts\SliceBomb.cs" />
-     <Compile Include="Assets\Scripts\SliceSushi.cs" />
      <Compile Include="Assets\Scripts\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\Sushi.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />

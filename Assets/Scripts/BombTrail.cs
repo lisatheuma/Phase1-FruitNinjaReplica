@@ -20,7 +20,7 @@ public class BombTrail : MonoBehaviour
             GameObject instance = (GameObject)Instantiate(trail, transform.position, Quaternion.identity);
             Destroy(instance, 0.35f);
             timeBtwSpawns = startTimeBtwSpawms;
-            trail.transform.SetParent(_bombPrefab.transform);
+            //trail.transform.SetParent(_bombPrefab.transform);
 
             if(_bombPrefab == null)
             {

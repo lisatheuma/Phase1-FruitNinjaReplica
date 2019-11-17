@@ -15,11 +15,13 @@ public class SliceBomb : MonoBehaviour
     {
         
     }
-      void OnCollisionEnter2D(Collision2D collision) 
+    void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.gameObject.tag == "Slice")
         {
             Destroy(this.gameObject);
+            GameObject Lives = GameObject.Find("Lives");
+            Lives.GetComponent<DisplayLives> ().looseLife();
         }    
     }
 }

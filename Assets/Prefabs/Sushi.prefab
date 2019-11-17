@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1530217901534024395}
   - component: {fileID: 2852776745122506722}
-  - component: {fileID: -1884610941432639697}
   - component: {fileID: 1530217901534024390}
   - component: {fileID: 1348848096004038085}
-  - component: {fileID: 3733881349830662968}
+  - component: {fileID: 7497722187956643980}
   m_Layer: 8
   m_Name: Sushi
   m_TagString: Sushi
@@ -53,18 +52,6 @@ MonoBehaviour:
   minYSpeed: 10
   maxYSpeed: 12
   destroyTime: 3
---- !u!114 &-1884610941432639697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530217901534024385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6546e2d50fce64f93b6e722e9a718262, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1530217901534024390
 Rigidbody2D:
   serializedVersion: 4
@@ -122,7 +109,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -547710213
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a46fa385e994f444b95f5a8fa7aa7166, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,8 +122,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3733881349830662968
-BoxCollider2D:
+--- !u!68 &7497722187956643980
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,15 +136,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
