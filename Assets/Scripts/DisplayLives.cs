@@ -30,15 +30,21 @@ public class DisplayLives : MonoBehaviour
         this.Lifecount -= 1;
         GameObject life = this.lives [this.lives.Count - 1];
         this.lives.RemoveAt(this.lives.Count - 1);
-        //index
-        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-        renderer.color = Color.red;
+        
         
         if (this.Lifecount == 0) 
         {
             this.scoreText.SetActive (false);
             Debug.Log("Game Over");
         }
+
+        if(Sushi.gameObject.transform.position.y < -6.4)
+            {
+            //index   
+            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+            renderer.color = Color.red;
+            }       
+
 
     }
 

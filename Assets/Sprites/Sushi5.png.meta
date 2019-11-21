@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: 8416411da4a2b4d57a6e27c51e17ace1
+guid: c20aed2ff86664981b42d1d3a2beb0aa
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7492113453517499882
+    second: Sushi5-16_0
+  - first:
+      213: -406767758822040296
+    second: Sushi5-16_1
+  - first:
+      213: -7517668180891502426
+    second: Sushi5-16_2
+  - first:
+      213: -557920148446805927
+    second: Sushi5_0
+  - first:
+      213: 8458682751833058737
+    second: Sushi5_1
+  - first:
+      213: -3554443228340891319
+    second: Sushi5_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,11 +102,74 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sushi5_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 658
+        width: 490
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec84bcb24af446bf87d53ae035d78a1
+      internalID: -557920148446805927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sushi5_1
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 679
+        width: 491
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a42efed7d5a104cf48ba1b12ab311729
+      internalID: 8458682751833058737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sushi5_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 167
+        width: 490
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02319eac418924abfbf9db0aba626d21
+      internalID: -3554443228340891319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 87253cf6693fc4a9a95df97cd1467427
     internalID: 0
     vertices: []
     indices: 

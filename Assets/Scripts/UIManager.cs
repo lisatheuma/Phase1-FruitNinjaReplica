@@ -11,19 +11,24 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameOver;
 
+    //public TrailActivebool playerLine;
+    //public ParticleEmitter playerLine = true;
+    TrailRenderer trail;
 
     void OnMouseExit() {
         GoTogame();
     }
     public void GoTogame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
         Debug.Log("Opening AR...");
     }
 
     void Update() 
     {
+        trail = GetComponent<TrailRenderer>();
+        trail.time = 1f;
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(GamePaused == false)
@@ -40,6 +45,7 @@ public class UIManager : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
+        //playerLine.emitting = false;
         Time.timeScale = 0f;
         GamePaused = true;
     }
@@ -47,6 +53,7 @@ public class UIManager : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        //playerLine.emitting = true;
         Time.timeScale = 1f;
         GamePaused = false;
     }

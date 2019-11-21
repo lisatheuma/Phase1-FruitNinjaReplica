@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class LuckyCat : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    
+    private GameObject _LuckyCatPrefab;
+    
+    [SerializeField]
+    private float minXSpeed, maxXSpeed, minYSpeed, maxYSpeed;
+    [SerializeField]
+    private float destroyTime;
+	void Start ()
+	{
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed), Random.Range (minYSpeed, maxYSpeed));
+        Destroy(this.gameObject, this.destroyTime);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    void OnCollisionEnter2D(Collider2D other) 
+    {
+        if (other.tag == "Player")
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 }

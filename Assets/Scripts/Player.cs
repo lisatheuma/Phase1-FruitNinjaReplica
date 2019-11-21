@@ -5,18 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    //private int _lives = 1;
+    private int _lives = 3;
     [SerializeField]
     public float distance = 1f;
     public bool useInitialCameraDistance = false;
     public bool isslicing = false;
     private float actualDistance;
-    private float sliceDestroyTime;
+    //private float sliceDestroyTime;
     private Camera cam;
     private Vector2 swipeStart;
     CircleCollider2D circleCollider;
 
-    private float speed = 1.0f;
+    //private float speed = 1.0f;
     public static float unscaledTime;
 
     
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        unscaledTime = Time.unscaledTime;
         Cursor.visible = false;
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = actualDistance;

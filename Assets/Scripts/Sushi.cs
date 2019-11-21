@@ -14,7 +14,6 @@ public class Sushi : MonoBehaviour
     private GameObject selectedObject;
     private Vector3 position;
 
-    private GameObject life;
 
 
 	void Start ()
@@ -33,13 +32,8 @@ public class Sushi : MonoBehaviour
             Destroy(this.gameObject);
             GameObject scoreamount = GameObject.Find("Scoreamount");
             Score.scoreamount += 1;
-
         }    
 
-        if(transform.position.y < -6.4)
-        {
-            Destroy(life);
-        }
     }
 
 }

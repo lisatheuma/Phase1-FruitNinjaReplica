@@ -13,9 +13,6 @@ public class SpawnManager : MonoBehaviour
     private GameObject _sushiContainer;
 
     [SerializeField]
-    private GameObject[] _luckyCatPrefab;
-
-    [SerializeField]
     private Sprite[] objectSprites;
 
     //private Transform[] spawnPoints;
@@ -32,18 +29,7 @@ public class SpawnManager : MonoBehaviour
         //InvokeRepeating("spawnSushi", this.spawnInterval, this.spawnInterval);
         InvokeRepeating("spawnSushi", sushiSpawn_delay, sushiSpawn_time);
         //StartCoroutine(TimeIncrease());
-        //StartCoroutine(SpawnLuckyCatRoutine(5f));
-        //InvokeRepeating("spawnLuckyCat", this.spawnInterval, this.spawnInterval);
     }
-
-    //private void spawnLuckyCat()
-    //{
-    //    GameObject LuckyCat = Instantiate(_luckyCatPrefab);
-    //    LuckyCat.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
-        //GameObject newEnemy = Instantiate(_enemyPrefab, spawnPos, Quaternion.identity);
-        //    newEnemy.transform.SetParent(_enemyContainer.transform);
-    //    yield return new WaitForSeconds(60);
-    //}
     private void spawnSushi()
     {
         //While (_stopSpawning == false){
@@ -54,7 +40,6 @@ public class SpawnManager : MonoBehaviour
             Sushi.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
             Sushi.transform.SetParent(_sushiContainer.transform);
             //yield return new WaitForSeconds(delay);
-            //Destroy(spawnedSushi, 5f);
             Sprite objectSprite = objectSprites[Random.Range (0, this.objectSprites.Length)];
             Sushi.GetComponent<SpriteRenderer>().sprite = objectSprite;
         //}

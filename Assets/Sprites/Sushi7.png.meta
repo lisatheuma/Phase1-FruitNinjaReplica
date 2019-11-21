@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 0b5f2e8e5ce7143a09973b96f64a0d40
+guid: 0abaafdfce552468e9cfdc7fe1b27826
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2323553682836377234
+    second: Sushi7_0
+  - first:
+      213: -8204318271861810242
+    second: Sushi7_1
+  - first:
+      213: 8604115311740224664
+    second: Sushi7_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,11 +93,74 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sushi7_0
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 641
+        width: 492
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16912228744f44459b4f3ca50f2e119c
+      internalID: 2323553682836377234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sushi7_1
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 691
+        width: 492
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11d397fbb1a24107bb842b43ccb931d
+      internalID: -8204318271861810242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sushi7_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 48
+        width: 498
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2da5d6741f87403c9c33587316f850c
+      internalID: 8604115311740224664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7ee3fbd0cacd44cb3926b621d61d1cb6
     internalID: 0
     vertices: []
     indices: 

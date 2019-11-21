@@ -20,7 +20,8 @@ public class BombSpawner : MonoBehaviour
     {
         InvokeRepeating("spawnBomb", this.spawnInterval, this.spawnInterval);
     }
-     private void spawnBomb()
+    
+    private void spawnBomb()
     {
             GameObject Bomb = Instantiate(_bombPrefab);
             Bomb.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
@@ -29,7 +30,6 @@ public class BombSpawner : MonoBehaviour
             //Destroy(spawnedSushi, 5f);
     }
 
-    
     public void OnPlayerDeath()
     {
         _stopSpawning = true;
