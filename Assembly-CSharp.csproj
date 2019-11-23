@@ -48,12 +48,15 @@
      <Compile Include="Assets\Scripts\BombSpawner.cs" />
      <Compile Include="Assets\Scripts\BombTrail.cs" />
      <Compile Include="Assets\Scripts\DisplayLives.cs" />
+     <Compile Include="Assets\Scripts\Hearts.cs" />
      <Compile Include="Assets\Scripts\LuckyCat.cs" />
      <Compile Include="Assets\Scripts\LuckyCatSpawner.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\SliceBomb.cs" />
      <Compile Include="Assets\Scripts\SpawnManager.cs" />
+     <Compile Include="Assets\Scripts\Special0.cs" />
+     <Compile Include="Assets\Scripts\SpecialSpawner.cs" />
      <Compile Include="Assets\Scripts\Sushi.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

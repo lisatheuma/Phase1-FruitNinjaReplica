@@ -20,7 +20,7 @@ TagManager:
   - 
   - Interactive
   - Player
-  - 
+  - Background
   - 
   - 
   - 
@@ -48,6 +48,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 201403299
+    locked: 0
+  - name: Background2
+    uniqueID: 4007069107
     locked: 0
   - name: Menus
     uniqueID: 1215282809

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public static bool GameOver = false;
     public GameObject pauseMenu;
     public GameObject gameOver;
+    public GameObject attention;
 
     //public TrailActivebool playerLine;
     //public ParticleEmitter playerLine = true;
@@ -48,8 +49,17 @@ public class UIManager : MonoBehaviour
         //playerLine.emitting = false;
         Time.timeScale = 0f;
         GamePaused = true;
-    }
 
+        
+    }
+    
+    public void Quit()
+    {
+        attention.SetActive(true);
+        //playerLine.emitting = true;
+        Time.timeScale = 0f;
+        GamePaused = true;
+    }
     public void Resume()
     {
         pauseMenu.SetActive(false);
