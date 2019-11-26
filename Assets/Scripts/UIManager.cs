@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -11,14 +12,23 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameOver;
     public GameObject attention;
+    public Text finalScoreText;
 
     //public TrailActivebool playerLine;
-    //public ParticleEmitter playerLine = true;
-    TrailRenderer trail;
+
+    [SerializeField] TrailRenderer trail;
 
     void OnMouseExit() {
         GoTogame();
     }
+
+    public void DoGameOver()
+    {
+        Time.timeScale = 0;
+        gameOver.SetActive(true);
+        finalScoreText.text = "Total Score\n" + 10;
+    }
+
     public void GoTogame()
     {
         SceneManager.LoadScene("Game");
@@ -28,8 +38,6 @@ public class UIManager : MonoBehaviour
 
     void Update() 
     {
-        trail = GetComponent<TrailRenderer>();
-        trail.time = 1f;
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(GamePaused == false)
@@ -46,11 +54,18 @@ public class UIManager : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        trail.emitting = false;
+        GamePaused = true;
+    }
+
+    public void No()
+    {
+        attention.SetActive(false);
+        pauseMenu.SetActive(true);
         //playerLine.emitting = false;
         Time.timeScale = 0f;
-        GamePaused = true;
-
-        
+        GamePaused = true; 
     }
     
     public void Quit()
@@ -62,6 +77,7 @@ public class UIManager : MonoBehaviour
     }
     public void Resume()
     {
+        attention.SetActive(false);
         pauseMenu.SetActive(false);
         //playerLine.emitting = true;
         Time.timeScale = 1f;

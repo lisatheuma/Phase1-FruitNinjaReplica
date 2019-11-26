@@ -11,17 +11,11 @@ public class Hearts : MonoBehaviour
 
     [SerializeField]
     private Text _hearts;
-
-    //private GameObject _hearts;
-
+    private GameObject _sushiPrefab;
     public GameObject gameOver;
     public static bool GameOver = false;
     public bool isDead;
 
-    void OnTriggerEnter(Collider other) 
-    {
-        //minusHeart();
-    }
     void Start()
     {
         _hearts = GetComponent<Text>();
@@ -47,4 +41,7 @@ public class Hearts : MonoBehaviour
     {
         heartCount--;
     }
+        //if sushi falls out of bounds
+        //lose lifes minusHeart()  
+
 }

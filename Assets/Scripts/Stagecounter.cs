@@ -7,52 +7,41 @@ public class Stagecounter : MonoBehaviour
 {
     SpriteRenderer _stageCounterFill;
     public Image stageCounterFill;
-    private Animation anim;
-
-    bool _counterFillAnim;
+    private Animation m_Animator;
+    bool m_CounterFillAnim;
     private GameObject _sushiPrefab;
+    public Text stageCount;
+    public Text heartsCount;
+    public static int stageamount = 1;
 
-    private Text stageCount;
-    public static int stageamount = 0;
+    private int _cutSushi = 0;
 
     [SerializeField]    
     private float currentSpeed;
+    public static bool GameOver = false;
+    public static bool GamePaused = false;
+    public GameObject gameOver;
 
-    void Start(){
-        stageCount = GetComponent<Text>();
-        anim = gameObject.GetComponent<Animation>();
-        _counterFillAnim = false;
-        
+    public void AddScore()
+    {
+        _cutSushi++;
+
+        if (_cutSushi >= stageamount)
+        {
+            _cutSushi -= stageamount;
+            stageamount++;
+        }
+
+        stageCounterFill.fillAmount = (float) _cutSushi / (float) stageamount;
+        stageCount.text = stageamount.ToString();
     }
 
-    void Update()
+    public void OnPlayerDeath()
     {
-        stageCount.text =  stageamount.ToString();;
-
-        if(stageCounterFill.fillAmount != 1f)
-        {
-            stageCounterFill.fillAmount += 0.01f;
-        }
+        Time.timeScale = 0f;
+        GamePaused = true;
+        GameOver = true;
         
-
-        //if(slicing sushi)
-        {
-            //fill
-            //fill x2 on combo
-            //speed increases over time
-        }
-
-        if(stageCounterFill.fillAmount == 1f)
-        {
-            //anim.Play("CounterFillAnim");
-            stageamount = stageamount + 1;
-            //waitforseconds
-            stageCounterFill.fillAmount -= 1f;
-        }
-
-        //when collecting 2X powerup
-        //SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-        //renderer.color = Color.;
     }
 
 }

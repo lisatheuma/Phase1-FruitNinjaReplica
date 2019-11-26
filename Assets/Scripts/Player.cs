@@ -24,8 +24,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-       // trail = GetComponent<TrailRenderer>();
-        Cursor.visible = false;
         circleCollider = GetComponent<CircleCollider2D>();
         if(useInitialCameraDistance)
         {
@@ -43,7 +41,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         unscaledTime = Time.unscaledTime;
-        Cursor.visible = false;
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = actualDistance;
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);

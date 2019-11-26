@@ -10,8 +10,11 @@ public class Score : MonoBehaviour
     public Transform player;
     public static int scoreamount = 0;
     public Text score;
-
+    public Text endTotalScore;
     public Text highScore;
+    public Text endHighScore;
+    public GameObject gameOver;
+    public static bool GameOver = false;
 
     void OnTriggerEnter(Collider other) 
     {
@@ -21,6 +24,9 @@ public class Score : MonoBehaviour
     {
     score = GetComponent<Text>();
     highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    endHighScore.text = PlayerPrefs.GetInt("EndHighScore", 0).ToString();
+    endTotalScore.text = PlayerPrefs.GetInt("EndTotalScore", 0).ToString();
+    scoreamount = 0;
     }
 
     void Update()
@@ -32,7 +38,12 @@ public class Score : MonoBehaviour
 
         }
 
-        //if player dies, reset score
+        if(gameOver == true)
+        {
+            //reset score
+            scoreamount = 0;
+        }
+ 
     }
     
 }

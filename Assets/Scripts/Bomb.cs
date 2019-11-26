@@ -12,8 +12,18 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private float destroyTime;
 
+    public GameObject gameOver;
+    public static bool GameOver = false;
+    public bool isDead;
+
+    private CircleCollider2D _collider;
+
+    private UIManager _uiManager;
+
 	void Start ()
 	{
+        _uiManager = FindObjectOfType<UIManager>();
+
         this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed), Random.Range (minYSpeed, maxYSpeed));
         Destroy(this.gameObject, this.destroyTime);
     }
@@ -22,13 +32,17 @@ public class Bomb : MonoBehaviour
     {
     }
 
-    void OnCollisionEnter2D(Collider2D other) 
+    void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.tag == "Player")
         {
-            Destroy(other.gameObject);
-            Destroy(this.gameObject);
-        }
+            Player player = other.GetComponent<Player>();
+            if (player != null)
+            {
+                _uiManager.DoGameOver();
+                Destroy(this.gameObject);
+            }
+        }    
     }
 
 }

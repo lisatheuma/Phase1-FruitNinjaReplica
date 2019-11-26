@@ -5,6 +5,10 @@ using UnityEngine;
 public class SliceBomb : MonoBehaviour
 {
 
+    public GameObject gameOver;
+    public static bool GameOver = false;
+    public bool isDead;
+
     void Start()
     {
         
@@ -14,13 +18,20 @@ public class SliceBomb : MonoBehaviour
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collision) 
+    void OnTriggerEnter2D(Collider2D other) 
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
+            Player player = other.GetComponent<Player>();
+            if (player != null)
+            {
+            isDead = true;
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
+            GameOver = true;
             Destroy(this.gameObject);
-            GameObject Lives = GameObject.Find("Lives");
-            Lives.GetComponent<DisplayLives> ().looseLife();
+            //game over
+            }
         }    
     }
 }
