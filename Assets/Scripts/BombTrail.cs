@@ -26,6 +26,10 @@ public class BombTrail : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
-            
+    }
+
+    public void OnPlayerDeath()
+    {
+        Destroy(this.gameObject);   
     }
 }

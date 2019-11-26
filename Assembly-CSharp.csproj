@@ -47,11 +47,9 @@
   <ItemGroup>     <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\BombSpawner.cs" />
      <Compile Include="Assets\Scripts\BombTrail.cs" />
-     <Compile Include="Assets\Scripts\DisplayLives.cs" />
      <Compile Include="Assets\Scripts\Hearts.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
-     <Compile Include="Assets\Scripts\SliceBomb.cs" />
      <Compile Include="Assets\Scripts\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\Stagecounter.cs" />
      <Compile Include="Assets\Scripts\Sushi.cs" />

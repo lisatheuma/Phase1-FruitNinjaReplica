@@ -13,8 +13,7 @@ public class SpawnManager : MonoBehaviour
     private GameObject _sushiContainer;
 
     [SerializeField]
-    private Sprite[] objectSprites;
-
+    private GameObject[] _targetPrefabs;
     private bool _stopSpawning = false;
     public float sushiSpawn_time = 2f;
     public float sushiSpawn_delay = 5f;
@@ -29,11 +28,12 @@ public class SpawnManager : MonoBehaviour
     }
     private void spawnSushi()
     {
+            int index = Random.Range(0, _targetPrefabs.Length);
             GameObject Sushi = Instantiate(_sushiPrefab);
-            Sushi.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
+           // index.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
             Sushi.transform.SetParent(_sushiContainer.transform);
-            Sprite objectSprite = objectSprites[Random.Range (0, this.objectSprites.Length)];
-            Sushi.GetComponent<SpriteRenderer>().sprite = objectSprite;
+            //Sprite objectSprite = objectSprites[Random.Range (0, this.objectSprites.Length)];
+            //Sushi.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
     
 

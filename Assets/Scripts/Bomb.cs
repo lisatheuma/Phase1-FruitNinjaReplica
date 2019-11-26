@@ -12,10 +12,6 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private float destroyTime;
 
-    public GameObject gameOver;
-    public static bool GameOver = false;
-    public bool isDead;
-
     private CircleCollider2D _collider;
 
     private UIManager _uiManager;

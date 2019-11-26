@@ -6,7 +6,7 @@ public class Sushi : MonoBehaviour
 {
 
     private GameObject _sushiPrefab;
-    public GameObject slicedSushiPrefab;
+
     [SerializeField]
     private float minXSpeed, maxXSpeed, minYSpeed, maxYSpeed;
     [SerializeField]
@@ -20,12 +20,14 @@ public class Sushi : MonoBehaviour
 
     private BoxCollider2D _collider;
 
+    [SerializeField]
+    private GameObject[] _targetPrefabs;
 
 	void Start ()
 	{
+        int index = Random.Range(0, _targetPrefabs.Length);
         _counter = FindObjectOfType<Stagecounter>();
         _collider = GetComponent<BoxCollider2D>();
-        
         this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed), Random.Range (minYSpeed, maxYSpeed));
         
         Destroy(this.gameObject, this.destroyTime);
@@ -33,12 +35,6 @@ public class Sushi : MonoBehaviour
 
     void Update()
     {
-        //if sushi falls out of bounds
-        //lose lifes minusHeart()  
-        if(transform.position.y < 6.9)
-        {
-            
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

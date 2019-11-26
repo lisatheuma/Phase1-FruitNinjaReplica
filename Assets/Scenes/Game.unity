@@ -663,7 +663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.052}
+  m_AnchoredPosition: {x: 0, y: 0.028999994}
   m_SizeDelta: {x: 3.2, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &384428293
@@ -905,9 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 475993534}
   score: {fileID: 471841124}
-  endTotalScore: {fileID: 0}
   highScore: {fileID: 0}
-  endHighScore: {fileID: 0}
   gameOver: {fileID: 0}
 --- !u!114 &471841124
 MonoBehaviour:
@@ -1623,7 +1621,9 @@ MonoBehaviour:
   pauseMenu: {fileID: 1130495416}
   gameOver: {fileID: 2138415147}
   attention: {fileID: 325065559}
-  finalScoreText: {fileID: 0}
+  score: {fileID: 471841124}
+  finalHighscoreText: {fileID: 1915756775}
+  finalScoreText: {fileID: 1167700046}
   trail: {fileID: 475993532}
 --- !u!1 &675684493
 GameObject:
@@ -1657,11 +1657,11 @@ RectTransform:
   m_LocalScale: {x: 0.03108757, y: 0.05406534, z: 0}
   m_Children: []
   m_Father: {fileID: 1130495417}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.04}
+  m_AnchoredPosition: {x: 0, y: -0.026}
   m_SizeDelta: {x: 3.2, y: 0.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675684495
@@ -2490,7 +2490,7 @@ GameObject:
   - component: {fileID: 1106525137}
   - component: {fileID: 1106525139}
   - component: {fileID: 1106525138}
-  - component: {fileID: 1106525140}
+  - component: {fileID: 1106525141}
   m_Layer: 5
   m_Name: Hearts
   m_TagString: Untagged
@@ -2557,7 +2557,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106525136}
   m_CullTransparentMesh: 0
---- !u!114 &1106525140
+--- !u!114 &1106525141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2566,12 +2566,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1106525136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d60b8cd62ff4b9d941f75b5888cffa, type: 3}
+  m_Script: {fileID: 11500000, guid: 9958ae1cc1c4046039db95d0a29431c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageCounterFill: {fileID: 0}
+  stageCount: {fileID: 0}
+  gameOver: {fileID: 2138415147}
   startingHearts: 3
   _hearts: {fileID: 1106525138}
-  gameOver: {fileID: 2138415147}
   isDead: 0
 --- !u!1 &1130495416
 GameObject:
@@ -2605,7 +2607,6 @@ RectTransform:
   m_Children:
   - {fileID: 498965159}
   - {fileID: 384428292}
-  - {fileID: 1566003310}
   - {fileID: 675684494}
   - {fileID: 1905372843}
   - {fileID: 1227138960}
@@ -2716,21 +2717,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa7400988469451e86b360ed1974bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sushiPrefab: {fileID: 1530217901534024385, guid: 373e2a6bf23f84f5aa7f5b45b87d4721,
+  _sushiPrefab: {fileID: 1530217901534024385, guid: 6c763d44898914dfcb674d0af79aa23c,
     type: 3}
   _sushiContainer: {fileID: 70415366}
-  objectSprites:
-  - {fileID: 3444402818956518725, guid: 6bf5920b048344ba09425b4e3cdc97df, type: 3}
-  - {fileID: -3845381565906515292, guid: 4a7c12a2060e74348a9c2fa4e89eae65, type: 3}
-  - {fileID: -4067703500857813062, guid: d0eb790d42703443a9783b15bf0670b6, type: 3}
-  - {fileID: -4452994207940653263, guid: 517da4dccfc834089ac32a9b9af08e71, type: 3}
-  - {fileID: -557920148446805927, guid: c20aed2ff86664981b42d1d3a2beb0aa, type: 3}
-  - {fileID: 4636616221431803933, guid: 39dc9165b68734b03a952af47bd9a899, type: 3}
-  - {fileID: 2323553682836377234, guid: 0abaafdfce552468e9cfdc7fe1b27826, type: 3}
-  - {fileID: -6298017266813387558, guid: bee236aca250d471ba434ec75e9b4fbe, type: 3}
-  - {fileID: 2274381055092292953, guid: 4135f01cda7c048cfa7635fb09c61f00, type: 3}
-  - {fileID: -893884181723579922, guid: 43413fbc464a1478eaad647dceaada93, type: 3}
-  - {fileID: 6722765408927012015, guid: 6238d23ce732648c8b3300aca82855e9, type: 3}
+  _targetPrefabs:
+  - {fileID: 1530217901534024385, guid: 6c763d44898914dfcb674d0af79aa23c, type: 3}
+  - {fileID: 1530217901534024385, guid: 96f0b5a1a1d8341758987e69dbcb4c85, type: 3}
+  - {fileID: 1530217901534024385, guid: ecba48a3a4955448ebb746f1e6dfe208, type: 3}
+  - {fileID: 1530217901534024385, guid: 6f8c4db624911435183da326520a4393, type: 3}
+  - {fileID: 1530217901534024385, guid: 3b8f103fdccb347339657e25993c05bf, type: 3}
+  - {fileID: 1530217901534024385, guid: 53e6136cb378145549da55aa0de751f3, type: 3}
+  - {fileID: 1530217901534024385, guid: af3c806f1bb9947c39e8821c495bef77, type: 3}
+  - {fileID: 1530217901534024385, guid: d5bb4ceded05d4e2e8b6ede270511696, type: 3}
+  - {fileID: 1530217901534024385, guid: bde4125ac599f4bb79fed7d834383373, type: 3}
+  - {fileID: 1530217901534024385, guid: b12dd5dbc87e7479c89fc0c649f238e3, type: 3}
+  - {fileID: 1530217901534024385, guid: 7e4714f9f9c8e4f05bec885c41b4f730, type: 3}
   sushiSpawn_time: 2
   sushiSpawn_delay: 5
   timeUntilSpawnIncrease: 30
@@ -2751,9 +2752,8 @@ GameObject:
   - component: {fileID: 1167700047}
   - component: {fileID: 1167700046}
   - component: {fileID: 1167700045}
-  - component: {fileID: 1167700048}
   m_Layer: 5
-  m_Name: EndTotalScore
+  m_Name: FinalScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2830,7 +2830,6 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'TOTAL SCORE
 
-    0
 
 '
 --- !u!222 &1167700047
@@ -2841,24 +2840,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167700043}
   m_CullTransparentMesh: 0
---- !u!114 &1167700048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167700043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32fa09ac6e684eefa5e5ef7ef7cf119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  score: {fileID: 1167700046}
-  endTotalScore: {fileID: 0}
-  highScore: {fileID: 1915756775}
-  endHighScore: {fileID: 0}
-  gameOver: {fileID: 0}
 --- !u!1 &1180056803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,9 +2895,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageCounterFill: {fileID: 985861945}
   stageCount: {fileID: 24637557}
-  heartsCount: {fileID: 0}
-  currentSpeed: 0
   gameOver: {fileID: 2138415147}
+  startingHearts: 3
+  _hearts: {fileID: 0}
+  isDead: 0
 --- !u!1 &1227138959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,11 +2930,11 @@ RectTransform:
   m_LocalScale: {x: 0.00006608905, y: 0.00010244859, z: -0.00006946138}
   m_Children: []
   m_Father: {fileID: 1130495417}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.128}
+  m_AnchoredPosition: {x: 0, y: 0.114}
   m_SizeDelta: {x: 1557, y: 300.47363}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1227138961
@@ -3200,7 +3182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301024989}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Bomb Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3586,155 +3568,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406748859}
   m_CullTransparentMesh: 0
---- !u!1 &1566003309
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1566003310}
-  - component: {fileID: 1566003313}
-  - component: {fileID: 1566003312}
-  - component: {fileID: 1566003311}
-  - component: {fileID: 1566003314}
-  m_Layer: 5
-  m_Name: HowToPlayButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1566003310
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566003309}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.146}
-  m_LocalScale: {x: 0.03108757, y: 0.05406534, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1130495417}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.006}
-  m_SizeDelta: {x: 3.2, y: 0.6}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1566003311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566003309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1566003312}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 582692251}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1566003312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566003309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -2495782739550021130, guid: 9971a808c648f4312a5076ad6221c8c0,
-    type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 1
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1566003313
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566003309}
-  m_CullTransparentMesh: 0
---- !u!95 &1566003314
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566003309}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1607345067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,7 +3578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607345069}
   - component: {fileID: 1607345068}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Bomb Spawner
   m_TagString: Bomb
   m_Icon: {fileID: 0}
@@ -3992,7 +3825,7 @@ RectTransform:
   m_LocalScale: {x: 0.010359937, y: 0.01801728, z: 0}
   m_Children: []
   m_Father: {fileID: 1130495417}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4121,9 +3954,8 @@ GameObject:
   - component: {fileID: 1915756776}
   - component: {fileID: 1915756775}
   - component: {fileID: 1915756774}
-  - component: {fileID: 1915756777}
   m_Layer: 5
-  m_Name: EndHighScore
+  m_Name: FinalHighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4209,24 +4041,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915756772}
   m_CullTransparentMesh: 0
---- !u!114 &1915756777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915756772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32fa09ac6e684eefa5e5ef7ef7cf119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  score: {fileID: 1167700046}
-  endTotalScore: {fileID: 0}
-  highScore: {fileID: 1915756775}
-  endHighScore: {fileID: 0}
-  gameOver: {fileID: 0}
 --- !u!1 &1953308839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,10 +4133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   score: {fileID: 471841124}
-  endTotalScore: {fileID: 0}
   highScore: {fileID: 1953308841}
-  endHighScore: {fileID: 0}
-  gameOver: {fileID: 0}
+  gameOver: {fileID: 2138415147}
 --- !u!1 &2138415147
 GameObject:
   m_ObjectHideFlags: 0

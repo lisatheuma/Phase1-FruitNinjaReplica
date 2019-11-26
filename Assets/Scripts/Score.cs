@@ -6,44 +6,43 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
 
-
     public Transform player;
-    public static int scoreamount = 0;
+    public static int scoreamount;
+    public static int totalhighscore;
     public Text score;
-    public Text endTotalScore;
     public Text highScore;
-    public Text endHighScore;
     public GameObject gameOver;
     public static bool GameOver = false;
+    private UIManager _uiManager;
 
-    void OnTriggerEnter(Collider other) 
-    {
-    
-    }
     void Start () 
     {
     score = GetComponent<Text>();
-    highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
-    endHighScore.text = PlayerPrefs.GetInt("EndHighScore", 0).ToString();
-    endTotalScore.text = PlayerPrefs.GetInt("EndTotalScore", 0).ToString();
-    scoreamount = 0;
+    highScore.text = totalhighscore.ToString();
+    //highScore.text = PlayerPrefs.GetInt("HighScore", totalhighscore).ToString();
     }
 
     void Update()
     {
-        score.text =  scoreamount.ToString();;
-        if(scoreamount > PlayerPrefs.GetInt("HighScore", 0))
+        score.text =  scoreamount.ToString();
+        if(scoreamount > totalhighscore)
         {
-            PlayerPrefs.SetInt("HighScore", scoreamount);
-
+            totalhighscore = scoreamount;
+            //PlayerPrefs.SetInt("HighScore", totalhighscore);
+            
+        }else
+        {
+            highScore.text = "" +totalhighscore;
         }
+
 
         if(gameOver == true)
         {
-            //reset score
-            scoreamount = 0;
+            _uiManager.DoGameOver();
+            // PlayerPrefs.SetInt("highscore", totalhighscore);
+            // PlayerPrefs.Save();
         }
- 
+
     }
     
 }

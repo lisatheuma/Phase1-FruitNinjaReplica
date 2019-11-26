@@ -7,20 +7,46 @@ public class Stagecounter : MonoBehaviour
 {
     SpriteRenderer _stageCounterFill;
     public Image stageCounterFill;
-    private Animation m_Animator;
     bool m_CounterFillAnim;
     private GameObject _sushiPrefab;
     public Text stageCount;
-    public Text heartsCount;
-    public static int stageamount = 1;
-
+    public static int stageamount = 0;
     private int _cutSushi = 0;
-
-    [SerializeField]    
-    private float currentSpeed;
     public static bool GameOver = false;
     public static bool GamePaused = false;
     public GameObject gameOver;
+    public int startingHearts;
+    private int heartCount;
+
+    [SerializeField]
+    private Text _hearts;
+    public bool isDead;
+    private UIManager _uiManager;
+
+    void Start()
+    {
+        _hearts = GetComponent<Text>();
+        heartCount = startingHearts;
+    }
+    void Update()
+    {
+        if(heartCount <= 0 && !isDead)
+        {
+            isDead = true;
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
+            GameOver = true;
+            _uiManager.DoGameOver();
+        }
+
+        _hearts.text = "x" + heartCount;
+
+        //-1 heart when sushi passes a certain position
+        if(transform.position.y < 6.9)
+        {
+            heartCount--;
+        }
+    }
 
     public void AddScore()
     {
@@ -34,14 +60,6 @@ public class Stagecounter : MonoBehaviour
 
         stageCounterFill.fillAmount = (float) _cutSushi / (float) stageamount;
         stageCount.text = stageamount.ToString();
-    }
-
-    public void OnPlayerDeath()
-    {
-        Time.timeScale = 0f;
-        GamePaused = true;
-        GameOver = true;
-        
     }
 
 }

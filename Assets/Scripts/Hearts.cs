@@ -22,7 +22,6 @@ public class Hearts : MonoBehaviour
         heartCount = startingHearts;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(heartCount <= 0 && !isDead)
