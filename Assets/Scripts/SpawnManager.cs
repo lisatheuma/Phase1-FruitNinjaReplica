@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
-
-    {
-
-    [SerializeField]
-    private GameObject _sushiPrefab;
+{
 
     [SerializeField]
     private GameObject _sushiContainer;
 
     [SerializeField]
-    private GameObject[] _targetPrefabs;
+    public GameObject[] targetPrefabs;
     private bool _stopSpawning = false;
     public float sushiSpawn_time = 2f;
     public float sushiSpawn_delay = 5f;
@@ -28,23 +24,31 @@ public class SpawnManager : MonoBehaviour
     }
     private void spawnSushi()
     {
-            int index = Random.Range(0, _targetPrefabs.Length);
-            GameObject Sushi = Instantiate(_sushiPrefab);
-           // index.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
-            Sushi.transform.SetParent(_sushiContainer.transform);
-            //Sprite objectSprite = objectSprites[Random.Range (0, this.objectSprites.Length)];
-            //Sushi.GetComponent<SpriteRenderer>().sprite = objectSprite;
+            int index = Random.Range(0, this.targetPrefabs.Length);
+            Vector2 location = new Vector2 (Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
+            GameObject targetPrefab = targetPrefabs[Random.Range(0,targetPrefabs.Length)];
+            var newTargetPrefab = Instantiate(targetPrefab);
+            newTargetPrefab.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
+            //this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed), Random.Range (minYSpeed, maxYSpeed));
+
+            /// Destroy(this.gameObject, this.destroyTime);
+            
+            //sushi.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
+            
+            //Instantiate (_targetPrefabs[index], Random.Range(-1f, 1f), Random.Range(-2f, 0));
+
+            // Sushi.transform.SetParent(_sushiContainer.transform);
+
+            // Sprite objectSprite = objectSprites[Random.Range (0, this.objectSprites.Length)];
+            // Sushi.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
     
-
-
-
-    public void StopSpawning()
-    {
-        CancelInvoke("spawnSushi");
-    }
     public void OnPlayerDeath()
     {
         _stopSpawning = true;
+    }
+        public void StopSpawning()
+    {
+        CancelInvoke("spawnSushi");
     }
 }

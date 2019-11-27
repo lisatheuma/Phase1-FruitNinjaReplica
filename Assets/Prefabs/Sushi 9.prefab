@@ -46,12 +46,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31de2201775543c2a07eac537caef12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slicedSushiPrefab: {fileID: 0}
   minXSpeed: -3
   maxXSpeed: 3
   minYSpeed: 10
   maxYSpeed: 12
   destroyTime: 3
+  targetPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!50 &1530217901534024390
 Rigidbody2D:
   serializedVersion: 4

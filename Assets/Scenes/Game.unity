@@ -2267,7 +2267,6 @@ GameObject:
   - component: {fileID: 985861944}
   - component: {fileID: 985861946}
   - component: {fileID: 985861945}
-  - component: {fileID: 985861948}
   m_Layer: 5
   m_Name: StageCounterFill
   m_TagString: Untagged
@@ -2291,8 +2290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -470.5, y: 286.1}
-  m_SizeDelta: {x: 30.6, y: 33.5}
+  m_AnchoredPosition: {x: -475.09998, y: 290.2}
+  m_SizeDelta: {x: 32.5, y: 33.5}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &985861945
 MonoBehaviour:
@@ -2312,8 +2311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -309825415074266887, guid: 1985b09a29986443789a7243fbce71d8,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1d522cb484cc48b096f6024cd4720b2, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2331,25 +2329,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985861943}
   m_CullTransparentMesh: 0
---- !u!95 &985861948
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985861943}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 66210564e473d48198b6eaaa9b174186, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1050382678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,10 +2696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa7400988469451e86b360ed1974bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sushiPrefab: {fileID: 1530217901534024385, guid: 6c763d44898914dfcb674d0af79aa23c,
-    type: 3}
   _sushiContainer: {fileID: 70415366}
-  _targetPrefabs:
+  targetPrefabs:
   - {fileID: 1530217901534024385, guid: 6c763d44898914dfcb674d0af79aa23c, type: 3}
   - {fileID: 1530217901534024385, guid: 96f0b5a1a1d8341758987e69dbcb4c85, type: 3}
   - {fileID: 1530217901534024385, guid: ecba48a3a4955448ebb746f1e6dfe208, type: 3}
@@ -2736,7 +2713,7 @@ MonoBehaviour:
   sushiSpawn_delay: 5
   timeUntilSpawnIncrease: 30
   sushiSpawn_increase: 1
-  spawnInterval: 0
+  spawnInterval: 2
   objectMinX: -1
   objectMaxX: 1
   objectY: -2
@@ -3397,8 +3374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 137.8, y: 20}
-  m_SizeDelta: {x: 200, y: 59.100006}
+  m_AnchoredPosition: {x: 148.3, y: 20}
+  m_SizeDelta: {x: 140, y: 59.100006}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1387551348
 MonoBehaviour:

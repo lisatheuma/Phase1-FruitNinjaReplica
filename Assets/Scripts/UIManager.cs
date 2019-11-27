@@ -19,6 +19,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] TrailRenderer trail;
 
 
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
     void OnMouseExit() {
         GoTogame();
     }
