@@ -58,6 +58,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3747257083
     locked: 0
+  - name: Background3
+    uniqueID: 2873624167
+    locked: 0
   - name: Trail
     uniqueID: 2217850425
     locked: 0

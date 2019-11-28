@@ -59,10 +59,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1530217901534024385}
+  - {fileID: 1530217901534024385, guid: bde4125ac599f4bb79fed7d834383373, type: 3}
+  - {fileID: 1530217901534024385, guid: b12dd5dbc87e7479c89fc0c649f238e3, type: 3}
+  - {fileID: 1530217901534024385, guid: 7e4714f9f9c8e4f05bec885c41b4f730, type: 3}
 --- !u!50 &1530217901534024390
 Rigidbody2D:
   serializedVersion: 4

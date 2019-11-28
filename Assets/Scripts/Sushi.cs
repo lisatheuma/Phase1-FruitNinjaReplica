@@ -11,25 +11,24 @@ public class Sushi : MonoBehaviour
     private GameObject selectedObject;
     private Vector3 position;
     private int heartCount;
-    private Stagecounter _counter;
-    private BoxCollider2D _collider;
-
-    [SerializeField]
-    private GameObject[] targetPrefabs;
+    private UIManager _uiManager;
 
 	void Start ()
 	{
-        GameObject targetPrefab = targetPrefabs[Random.Range(0,targetPrefabs.Length)];
-        _counter = FindObjectOfType<Stagecounter>();
-        _collider = GetComponent<BoxCollider2D>();
+        _uiManager = FindObjectOfType<UIManager>();
         this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed), Random.Range (minYSpeed, maxYSpeed));
-        
+
         Destroy(this.gameObject, this.destroyTime);
     }
 
-    void Update()
+    void Update() 
     {
-    }
+        
+        if(transform.position.y <= -7)
+        {
+            _uiManager.Damage();
+        }
+    }  
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -38,12 +37,12 @@ public class Sushi : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-                Score.scoreamount += 1;
-                _counter.AddScore();
+                //Score.scoreamount += 1;
+                // Score.scoreamount += 1;
+                _uiManager.AddScore();
+                Destroy(gameObject);
             }
-            Destroy(this.gameObject);
         }
     }
-
 
 }

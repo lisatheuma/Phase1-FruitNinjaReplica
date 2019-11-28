@@ -51,6 +51,7 @@ MonoBehaviour:
   minYSpeed: 10
   maxYSpeed: 12
   destroyTime: 3
+  _hearts: {fileID: 3900565394304094771, guid: 283a692dca1b04d27a7c32a35ec7b3fe, type: 3}
   targetPrefabs:
   - {fileID: 1530217901534024385}
   - {fileID: 1530217901534024385, guid: 96f0b5a1a1d8341758987e69dbcb4c85, type: 3}

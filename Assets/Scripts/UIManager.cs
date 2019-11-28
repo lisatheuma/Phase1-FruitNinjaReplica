@@ -1,28 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     
     public static bool GamePaused = false;
-    //public static bool GameOver = false;
+    public static bool GameOver = false;
+    //public bool isDead = false;
     public GameObject pauseMenu;
     public GameObject gameOver;
     public GameObject attention;
-    public Text score;
-    public Text finalHighscoreText;
+    public Text scoreText;
+    public Text highscoreText;
+    public Text finalHighScoreText;
     public Text finalScoreText;
+    SpriteRenderer _stageCounterFill;
+    public Image stageCounterFill;
+    public Text stageCount;
+    public static int stageamount = 0;
+    private int _cutSushi = 0;
+    private int _score = 0;
+    //public static int scoreamount;
+    public int totalhighscore;
+    public int startingHearts;
+    private int heartCount;
 
+    [SerializeField]
+    public Text _hearts;
     [SerializeField] TrailRenderer trail;
-
+    
 
     void Start()
     {
+        heartCount = startingHearts;
         Time.timeScale = 1f;
+        AddHighscore();
     }
+
     void OnMouseExit() {
         GoTogame();
     }
@@ -47,7 +64,8 @@ public class UIManager : MonoBehaviour
                 Resume();
             }
             
-        } 
+        }
+        AddHighscore();
     }
 
     public void Pause()
@@ -87,6 +105,37 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void AddScore()
+    {
+        _cutSushi++;
+        _score++;
+
+        if (_cutSushi >= stageamount)
+        {
+            _cutSushi -= stageamount;
+            stageamount++;
+        }
+
+        stageCounterFill.fillAmount = (float) _cutSushi / (float) stageamount;
+        stageCount.text = stageamount.ToString();
+        scoreText.text = _score.ToString();
+        //scoreText.text =  scoreamount.ToString();
+        //AddHighscore();
+    }
+
+    public void AddHighscore()
+    {
+        highscoreText.text = totalhighscore.ToString(); 
+        if(_score >= totalhighscore)
+        {
+            totalhighscore = _score;
+            
+        }else
+        {
+            highscoreText.text = "" +totalhighscore;
+        }
+    }
+
     public void DoGameOver()
     {
         trail.emitting = false;
@@ -95,7 +144,27 @@ public class UIManager : MonoBehaviour
         gameOver.SetActive(true);
         GameObject.Find("Score").GetComponent<Text>();
         finalScoreText.text = "Total Score\n" + Score.scoreamount;
-        finalHighscoreText.text = "Highscore\n" + Score.totalhighscore;
+        finalHighScoreText.text = "Highscore\n" +totalhighscore;
+    }
+
+    public void Damage()
+    {
+        if(heartCount <= 0) // && !isDead)
+        {
+            // isDead = true;
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
+            GameOver = true;
+            DoGameOver();
+        }
+        
+        heartCount--;
+        // update ui
+        if(heartCount <1)
+        {
+            DoGameOver();
+        }
+        
     }
 
 }

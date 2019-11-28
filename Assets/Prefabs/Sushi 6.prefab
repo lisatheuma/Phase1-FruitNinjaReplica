@@ -52,17 +52,17 @@ MonoBehaviour:
   maxYSpeed: 12
   destroyTime: 3
   targetPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1530217901534024385, guid: 6c763d44898914dfcb674d0af79aa23c, type: 3}
+  - {fileID: 1530217901534024385, guid: 96f0b5a1a1d8341758987e69dbcb4c85, type: 3}
+  - {fileID: 1530217901534024385, guid: ecba48a3a4955448ebb746f1e6dfe208, type: 3}
+  - {fileID: 1530217901534024385, guid: 6f8c4db624911435183da326520a4393, type: 3}
+  - {fileID: 1530217901534024385, guid: 3b8f103fdccb347339657e25993c05bf, type: 3}
+  - {fileID: 1530217901534024385}
+  - {fileID: 1530217901534024385, guid: af3c806f1bb9947c39e8821c495bef77, type: 3}
+  - {fileID: 1530217901534024385, guid: d5bb4ceded05d4e2e8b6ede270511696, type: 3}
+  - {fileID: 1530217901534024385, guid: bde4125ac599f4bb79fed7d834383373, type: 3}
+  - {fileID: 1530217901534024385, guid: b12dd5dbc87e7479c89fc0c649f238e3, type: 3}
+  - {fileID: 1530217901534024385, guid: 7e4714f9f9c8e4f05bec885c41b4f730, type: 3}
 --- !u!50 &1530217901534024390
 Rigidbody2D:
   serializedVersion: 4

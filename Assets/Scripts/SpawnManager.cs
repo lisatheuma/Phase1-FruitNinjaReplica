@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -18,10 +19,16 @@ public class SpawnManager : MonoBehaviour
 
     public float spawnInterval, objectMinX, objectMaxX, objectY;
 
+    // private int heartCount;
+
+    // [SerializeField]
+    // private Text _hearts;
+    // private Hearts _Hearts;
+    
     void Start()
     {
         InvokeRepeating("spawnSushi", sushiSpawn_delay, sushiSpawn_time);
-    }
+    }  
     private void spawnSushi()
     {
             int index = Random.Range(0, this.targetPrefabs.Length);
@@ -38,11 +45,14 @@ public class SpawnManager : MonoBehaviour
             //Instantiate (_targetPrefabs[index], Random.Range(-1f, 1f), Random.Range(-2f, 0));
 
             // Sushi.transform.SetParent(_sushiContainer.transform);
-
             // Sprite objectSprite = objectSprites[Random.Range (0, this.objectSprites.Length)];
             // Sushi.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
     
+    void Update() 
+    {
+    }  
+
     public void OnPlayerDeath()
     {
         _stopSpawning = true;
