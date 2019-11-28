@@ -1548,7 +1548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8cefadf3c71d459f97e30ef33e89c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDead: 0
   pauseMenu: {fileID: 1130495416}
   gameOver: {fileID: 2138415147}
   attention: {fileID: 325065559}
@@ -4044,6 +4043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hearts
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900565394304094769, guid: 283a692dca1b04d27a7c32a35ec7b3fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3900565394304094768, guid: 283a692dca1b04d27a7c32a35ec7b3fe,
         type: 3}

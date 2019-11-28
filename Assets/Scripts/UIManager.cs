@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     private int _cutSushi = 0;
     private int _score = 0;
     //public static int scoreamount;
-    public int totalhighscore;
+    public static int totalhighscore;
     public int startingHearts;
     private int heartCount;
 
@@ -37,7 +37,8 @@ public class UIManager : MonoBehaviour
     {
         heartCount = startingHearts;
         Time.timeScale = 1f;
-        AddHighscore();
+        // highscoreText.text = totalhighscore.ToString(); 
+        //highscoreText.text = "" +totalhighscore;
     }
 
     void OnMouseExit() {
@@ -65,6 +66,7 @@ public class UIManager : MonoBehaviour
             }
             
         }
+        _hearts.text = "x" +heartCount;
         AddHighscore();
     }
 
@@ -120,12 +122,14 @@ public class UIManager : MonoBehaviour
         stageCount.text = stageamount.ToString();
         scoreText.text = _score.ToString();
         //scoreText.text =  scoreamount.ToString();
-        //AddHighscore();
     }
 
     public void AddHighscore()
     {
+
         highscoreText.text = totalhighscore.ToString(); 
+        //
+
         if(_score >= totalhighscore)
         {
             totalhighscore = _score;
@@ -143,12 +147,15 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
         gameOver.SetActive(true);
         GameObject.Find("Score").GetComponent<Text>();
-        finalScoreText.text = "Total Score\n" + Score.scoreamount;
+        finalScoreText.text = "Total Score\n" +_score;
         finalHighScoreText.text = "Highscore\n" +totalhighscore;
     }
 
     public void Damage()
     {
+        heartCount = heartCount -1;
+        //yield return?
+
         if(heartCount <= 0) // && !isDead)
         {
             // isDead = true;
@@ -157,9 +164,7 @@ public class UIManager : MonoBehaviour
             GameOver = true;
             DoGameOver();
         }
-        
-        heartCount--;
-        // update ui
+
         if(heartCount <1)
         {
             DoGameOver();

@@ -38,7 +38,6 @@ public class Sushi : MonoBehaviour
             if (player != null)
             {
                 //Score.scoreamount += 1;
-                // Score.scoreamount += 1;
                 _uiManager.AddScore();
                 Destroy(gameObject);
             }
