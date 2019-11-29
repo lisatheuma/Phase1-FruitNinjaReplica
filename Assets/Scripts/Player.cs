@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
     public bool isslicing = false;
     private float actualDistance;
     //private float sliceDestroyTime;
-    private Camera cam;
     private Vector2 swipeStart;
     CircleCollider2D circleCollider;
 
@@ -23,8 +22,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        cam = Camera.main;
         circleCollider = GetComponent<CircleCollider2D>();
+
         if(useInitialCameraDistance)
         {
             Vector3 toObjectVector = transform.position - Camera.main.transform.position;
@@ -44,17 +43,6 @@ public class Player : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = actualDistance;
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
-
-
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);
-
-
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        float angle = AngleBetweenTwoPoints(transform.position, mouseOnScreen);
-        transform.rotation =  Quaternion.Euler (new Vector3(0f,0f,angle));
-    }
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
-         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 }
 

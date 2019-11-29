@@ -37,6 +37,8 @@ public class UIManager : MonoBehaviour
     {
         heartCount = startingHearts;
         Time.timeScale = 1f;
+        stageamount = 0;
+        _score = 0;
         // highscoreText.text = totalhighscore.ToString(); 
         //highscoreText.text = "" +totalhighscore;
     }
@@ -50,7 +52,8 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
         Debug.Log("Opening AR...");
-        Score.scoreamount = 0;
+        stageamount = 0;
+        _score = 0;
     }
 
     void Update() 
@@ -154,6 +157,8 @@ public class UIManager : MonoBehaviour
     public void Damage()
     {
         heartCount = heartCount -1;
+        
+
         //yield return?
 
         if(heartCount <= 0) // && !isDead)

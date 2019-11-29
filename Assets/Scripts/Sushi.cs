@@ -13,6 +13,10 @@ public class Sushi : MonoBehaviour
     private int heartCount;
     private UIManager _uiManager;
 
+    [SerializeField] private SushiSplit _leftHalf;
+    
+    [SerializeField] private SushiSplit _rightHalf;
+
 	void Start ()
 	{
         _uiManager = FindObjectOfType<UIManager>();
@@ -27,8 +31,10 @@ public class Sushi : MonoBehaviour
         if(transform.position.y <= -7)
         {
             _uiManager.Damage();
+            Destroy(this.gameObject);
         }
-    }  
+
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,8 +43,14 @@ public class Sushi : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-                //Score.scoreamount += 1;
                 _uiManager.AddScore();
+
+                SushiSplit left = Instantiate(_leftHalf, transform.position, Quaternion.identity);
+                left.PushToSide(-1);
+
+                SushiSplit right = Instantiate(_rightHalf, transform.position, Quaternion.identity);
+                right.PushToSide(1);
+
                 Destroy(gameObject);
             }
         }

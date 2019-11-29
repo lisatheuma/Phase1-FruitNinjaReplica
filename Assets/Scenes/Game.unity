@@ -197,36 +197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24637554}
   m_CullTransparentMesh: 0
---- !u!1 &70415366
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 70415367}
-  m_Layer: 5
-  m_Name: Sushi Container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &70415367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70415366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1134541918}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &207850088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +975,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2077116871
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Time: 0.09
   m_Parameters:
@@ -1109,7 +1079,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 713624687
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6537397f52aff466e9f0c254d7194307, type: 3}
   m_Color: {r: 0.24313727, g: 0.81568635, b: 0.87843144, a: 1}
@@ -1160,14 +1130,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475993530}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2536,8 +2506,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.25, y: 3.0000215, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 0}
-  m_Children:
-  - {fileID: 70415367}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2553,10 +2522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa7400988469451e86b360ed1974bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sushiContainer: {fileID: 70415366}
   targetPrefabs:
   - {fileID: 1530217901534024385, guid: 6c763d44898914dfcb674d0af79aa23c, type: 3}
-  - {fileID: 1530217901534024385, guid: 96f0b5a1a1d8341758987e69dbcb4c85, type: 3}
+  - {fileID: 1530217901534024385, guid: 0a1275c57319a4198b57ad1db201566b, type: 3}
   - {fileID: 1530217901534024385, guid: ecba48a3a4955448ebb746f1e6dfe208, type: 3}
   - {fileID: 1530217901534024385, guid: 6f8c4db624911435183da326520a4393, type: 3}
   - {fileID: 1530217901534024385, guid: 3b8f103fdccb347339657e25993c05bf, type: 3}
@@ -2567,10 +2535,7 @@ MonoBehaviour:
   - {fileID: 1530217901534024385, guid: b12dd5dbc87e7479c89fc0c649f238e3, type: 3}
   - {fileID: 1530217901534024385, guid: 7e4714f9f9c8e4f05bec885c41b4f730, type: 3}
   sushiSpawn_time: 2
-  sushiSpawn_delay: 5
-  timeUntilSpawnIncrease: 30
-  sushiSpawn_increase: 1
-  spawnInterval: 2
+  sushiSpawn_delay: 2
   objectMinX: -1
   objectMaxX: 1
   objectY: -2
@@ -3415,7 +3380,7 @@ MonoBehaviour:
   _bombPrefab: {fileID: 5810675465738483195, guid: 16d1b232f0c5b4723861fa6e988fb706,
     type: 3}
   _bombContainer: {fileID: 1301024988}
-  spawnInterval: 4
+  spawnInterval: 4.5
   objectMinX: -3
   objectMaxX: 3
   objectY: -2.5
@@ -3487,7 +3452,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1421343129
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 92738bc9e94fd4ecb9fd19162ac8e27a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

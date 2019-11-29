@@ -52,6 +52,9 @@ TagManager:
   - name: Background2
     uniqueID: 4007069107
     locked: 0
+  - name: Halves
+    uniqueID: 2354629007
+    locked: 0
   - name: Menus
     uniqueID: 1215282809
     locked: 0
