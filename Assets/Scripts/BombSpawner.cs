@@ -25,9 +25,6 @@ public class BombSpawner : MonoBehaviour
     {
             GameObject Bomb = Instantiate(_bombPrefab);
             Bomb.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
-            //spawnedSushi.transform.SetParent(_sushiContainer.transform);
-            //yield return new WaitForSeconds(delay);
-            //Destroy(spawnedSushi, 5f);
     }
 
     public void OnPlayerDeath()

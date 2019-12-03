@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     
     public static bool GamePaused = false;
     public static bool GameOver = false;
-    //public bool isDead = false;
     public GameObject pauseMenu;
     public GameObject gameOver;
     public GameObject attention;
@@ -23,7 +22,6 @@ public class UIManager : MonoBehaviour
     public static int stageamount = 0;
     private int _cutSushi = 0;
     private int _score = 0;
-    //public static int scoreamount;
     public static int totalhighscore;
     public int startingHearts;
     private int heartCount;
@@ -39,8 +37,6 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         stageamount = 0;
         _score = 0;
-        // highscoreText.text = totalhighscore.ToString(); 
-        //highscoreText.text = "" +totalhighscore;
     }
 
     void OnMouseExit() {
@@ -51,7 +47,6 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
-        Debug.Log("Opening AR...");
         stageamount = 0;
         _score = 0;
     }
@@ -124,15 +119,13 @@ public class UIManager : MonoBehaviour
         stageCounterFill.fillAmount = (float) _cutSushi / (float) stageamount;
         stageCount.text = stageamount.ToString();
         scoreText.text = _score.ToString();
-        //scoreText.text =  scoreamount.ToString();
     }
 
     public void AddHighscore()
     {
 
         highscoreText.text = totalhighscore.ToString(); 
-        //
-
+        
         if(_score >= totalhighscore)
         {
             totalhighscore = _score;
@@ -159,19 +152,11 @@ public class UIManager : MonoBehaviour
         heartCount = heartCount -1;
         
 
-        //yield return?
-
-        if(heartCount <= 0) // && !isDead)
+        if(heartCount <= 0)
         {
-            // isDead = true;
             gameOver.SetActive(true);
             Time.timeScale = 0f;
             GameOver = true;
-            DoGameOver();
-        }
-
-        if(heartCount <1)
-        {
             DoGameOver();
         }
         

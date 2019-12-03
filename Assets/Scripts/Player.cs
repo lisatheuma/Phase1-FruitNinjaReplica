@@ -6,16 +6,14 @@ public class Player : MonoBehaviour
 {
 
     private int _lives = 3;
+    
     [SerializeField]
     public float distance = 1f;
     public bool useInitialCameraDistance = false;
     public bool isslicing = false;
     private float actualDistance;
-    //private float sliceDestroyTime;
     private Vector2 swipeStart;
     CircleCollider2D circleCollider;
-
-    //private float speed = 1.0f;
     public static float unscaledTime;
 
     

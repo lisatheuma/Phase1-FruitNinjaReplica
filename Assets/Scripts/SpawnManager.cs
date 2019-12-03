@@ -12,9 +12,6 @@ public class SpawnManager : MonoBehaviour
     public float sushiSpawn_time = 3f;
     public float sushiSpawn_delay = 2f;
     
-    //public float timeUntilSpawnIncrease = 5f;
-    // public float sushiSpawn_increase = 1f;
-
     public float objectMinX, objectMaxX, objectY;
 
     void Start()

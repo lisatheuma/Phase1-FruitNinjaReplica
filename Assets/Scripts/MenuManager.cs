@@ -9,17 +9,13 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        
         Time.timeScale = 1f;
-        //stageCount.text = stageamount.ToString();
     }
 
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
-        //stageamount = 0;
-        //_score = 0;
     }
 
     void Update()

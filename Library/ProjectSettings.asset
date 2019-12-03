@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Phase1-FruitNinjaReplica
-  defaultCursor: {fileID: 2800000, guid: 194e3cf078bec42869a66f361c9b3004, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 7.5, y: 7.5}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

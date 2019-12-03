@@ -8,9 +8,6 @@ public class Sushi : MonoBehaviour
     private float minXSpeed, maxXSpeed, minYSpeed, maxYSpeed;
     [SerializeField]
     private float destroyTime;
-    private GameObject selectedObject;
-    private Vector3 position;
-    private int heartCount;
     private UIManager _uiManager;
 
     [SerializeField] private SushiSplit _leftHalf;
